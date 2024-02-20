@@ -5,28 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador Alura - RIAS</title>
     <link rel="icon" href="" type="image/png">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <header>
-    
-    </header>
-    <main>
-    <input id="cambio" type="submit" value="">
-        <div>
-            <label for="texto_usuario">Ingresa el texto a encriptar</label>
-            <input type="text" name="texto_usuario" id="texto_usuario">
+
+        <div id="main-area">
+            <div id="header-logo">
+                    <img src="recursos/Logo-1.png" alt="">
+            </div>
+            <div id="texto-usuario">
+                <textarea name="" id="texto" cols="90" rows="30" autofocus placeholder="Ingrese el texto aquí"></textarea>
+            </div>
+            <div id="botones"><p></p>
+                <p><img src="recursos/bi_exclamation-circle-fill.png" alt="">Solo letras minusculas y sin acentos</p>
+                <button id="encriptar">Encriptar</button>
+                <button id="desencriptar">Desencriptar</button>
+            </div>
+
         </div>
         
-        <div>
-            <label for="texto_resultado">El texto encriptado ese el siguiente.</label>
-            <input type="text" name="texto_resultado" id="texto_resultado" disabled >
+        <div id="resultado">
+            <img src="recursos/Muñeco.png" alt="">
+            <h3>Ningun mensaje fue encontrado</h3>
+            <p>Ingresa el texto que desees encriptar o desencriptar</p>
         </div>
+        
 
-    </main>
-    <footer>
 
-    </footer>
-
+    
+    <!--Pie de pagina para mi información-->
     <script src="app.js"></script>
 </body>
 </html>
