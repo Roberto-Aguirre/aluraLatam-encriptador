@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador Alura - RIAS</title>
-    <link rel="icon" href="" type="image/png">
+    <link rel="icon" href="recursos/Logo-1.png" type="image/png">
     <link rel="stylesheet" href="estilos.css">
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -13,21 +17,26 @@
             <div id="header-logo">
                     <img src="recursos/Logo-1.png" alt="">
             </div>
+            
             <div id="texto-usuario">
-                <textarea name="" id="texto" cols="90" rows="30" autofocus placeholder="Ingrese el texto aquí"></textarea>
+                <textarea name="" id="texto" cols="90" rows="20" autofocus placeholder="Ingrese el texto aquí" ></textarea>
             </div>
-            <div id="botones"><p></p>
+            <div class="zona-botones">
+            <div id="botones" >
                 <p><img src="recursos/bi_exclamation-circle-fill.png" alt="">Solo letras minusculas y sin acentos</p>
-                <button id="encriptar">Encriptar</button>
-                <button id="desencriptar">Desencriptar</button>
+                <button class="formato-boton" id="encriptar">Encriptar</button>
+                <button class="formato-boton" id="desencriptar">Desencriptar</button>
             </div>
+        </div>
 
         </div>
         
         <div id="resultado">
+            <div id="area-resultado">
             <img src="recursos/Muñeco.png" alt="">
             <h3>Ningun mensaje fue encontrado</h3>
             <p>Ingresa el texto que desees encriptar o desencriptar</p>
+            </div>
         </div>
         
 
