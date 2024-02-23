@@ -1,13 +1,3 @@
-const inicial = document.getElementById("area-resultado");
-const bloqueResultado = document.getElementById("resultado");
-console.log(inicial);
-const textarea = document.getElementById("texto");
-const encriptarBtn = document.getElementById("encriptar");
-const desencriptarBtn = document.getElementById("desencriptar");
-
-let frase = "";
-
-
 /**
  * Reglas
  * Las "llaves" de encriptación que utilizaremos son las siguientes:
@@ -20,18 +10,46 @@ let frase = "";
 
 */
 
+//Elementos del DOM
 
+//Guardo la condicion inicial donde no se tiene nada
+const inicialResultado = document.getElementById("area-resultado");
+const bloqueResultado = document.getElementById("resultado");
+const textoResultado = document.getElementById("texto-resultado")
+
+//Eventlisteners
+const encriptarBtn = document.getElementById("encriptar");
+const desencriptarBtn = document.getElementById("desencriptar");
+
+//Elementos creados
+
+const childResultado  = document.createElement("p")
+console.log(textoResultado);
+
+
+//Variables globales
+let frase = "";
 let fraseArray = [];
+let textArea = document.getElementById("texto");
 
-function traerTexto() {
-    let frase = textarea.innerText;
-    return frase;
+
+
+
+function clickBtnEncriptar() {
+    textoResultado.innerText = juntarTexto(encriptarTexto(getTextareaValue()));
+    textoResultado.append(childResultado);
+    console.log(textoResultado);
+    inicialResultado.hidden = true;
 }
 
-function encriptar(frase,fraseArray){
+function getTextareaValue() {
+    return textArea.value;
+}
+
+function encriptarTexto(frase){
+    fraseArray = []
     for (let index = 0; index < frase.length; index++) {
         let letra = frase[index];
-    
         switch (letra) {
             case 'e':
                 letra = "enter";
@@ -53,12 +71,14 @@ function encriptar(frase,fraseArray){
         }
         fraseArray.push(letra);
     }
+    // console.log(fraseArray);
     return fraseArray;
+}   
+
+function juntarTexto(fraseArray){
+    let resultado = ""
+    fraseArray.forEach(element => {resultado += element;});
+    // console.log(resultado);
+    return resultado
 }
-
-encriptar(frase,fraseArray);
-
-console.log(fraseArray);
-console.log(frase[0]);
-
 
