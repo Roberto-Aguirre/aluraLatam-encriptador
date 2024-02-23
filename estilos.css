@@ -38,7 +38,7 @@ max-height: 100%;
 /*! Texto a ingresar */
 #texto-usuario{    
     /* border: 2px red solid; */
-    min-height: 70%;
+    min-height: 50%;
     display: flex;
     justify-content: center;
 }
@@ -121,23 +121,34 @@ button:active{
 }
 
 #area-resultado{
-    margin: 50% 0 0 0 ;
+    margin: 30% 10px 0 10px ;
     font-size: 15px;
     text-align: center;
     font-family: "Inter", sans-serif;   
 }
 
 #area-resultado > img{
-    width: 70%;
+    width: 60%;
 }
 
 #texto-resultado{
     margin: 50% 0 0 0 ;
     font-size: 15px;
     text-align: center;
+    min-height: fit-content;
     font-family: "Inter", sans-serif;  
     font-family: "Inter", sans-serif;
+    
+}
+#texto-resultado > textarea {
+    resize: none;
+    border: none;
     font-size: 200%;
     color: rgba(10, 56, 113,1);
+    width: 70%;
+    height: 400px;
+    margin: -100px 0 0 0 ;
+    padding: 0px 20px;
+    outline: 0 none;
 }
 

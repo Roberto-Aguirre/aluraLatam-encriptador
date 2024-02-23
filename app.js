@@ -23,8 +23,8 @@ const desencriptarBtn = document.getElementById("desencriptar");
 
 //Elementos creados
 
-const childResultado  = document.createElement("p")
-console.log(textoResultado);
+const childResultado  = document.createElement("textarea")
+childResultado.setAttribute("readonly","")
 
 
 //Variables globales
@@ -32,20 +32,23 @@ let frase = "";
 let fraseArray = [];
 let textArea = document.getElementById("texto");
 
-
-
-
 function clickBtnEncriptar() {
-    textoResultado.innerText = juntarTexto(encriptarTexto(getTextareaValue()));
-    textoResultado.append(childResultado);
-    console.log(textoResultado);
-    inicialResultado.hidden = true;
+    childResultado.value = juntarTexto(encriptarTexto(getTextareaValue()));
+    
+    if(childResultado.value!= ""){
+        textoResultado.appendChild(childResultado);
+        // console.log(textoResultado);
+        inicialResultado.hidden = true;
+        childResultado.hidden = false;
+    }else{
+        inicialResultado.hidden = false;
+        childResultado.hidden = true;
+    }
+    
 }
-
 function getTextareaValue() {
     return textArea.value;
 }
-
 function encriptarTexto(frase){
     fraseArray = []
     for (let index = 0; index < frase.length; index++) {
