@@ -46,6 +46,7 @@ function clickBtnEncriptar() {
     }
     
 }
+
 function getTextareaValue() {
     return textArea.value;
 }
@@ -53,6 +54,7 @@ function encriptarTexto(frase){
     fraseArray = []
     for (let index = 0; index < frase.length; index++) {
         let letra = frase[index];
+
         switch (letra) {
             case 'e':
                 letra = "enter";

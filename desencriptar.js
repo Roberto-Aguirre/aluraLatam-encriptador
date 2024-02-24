@@ -1,5 +1,5 @@
 // let frase = "hoberlai qufatenter paisai genterntenter denter yufattufatb"
-let frase = "enter imes ai ober ufat ufat"
+let frase = "enter imes ai ai ai ai ober ufat"
 
 /**
  * Reglas
@@ -26,8 +26,8 @@ const desencriptar = {
 // console.log(Object.values(desencriptar));
 // console.log(Object.keys(desencriptar));
 
-llaves = Object.values(desencriptar);
-valores = Object.keys(desencriptar);
+const llaves = Object.values(desencriptar);
+const valores = Object.keys(desencriptar);
 
 // console.log(frase);
 
@@ -35,14 +35,34 @@ valores = Object.keys(desencriptar);
 //     console.log(`${index}`)}
     
 //     );
+
+
+function filtro(frase) {
     
-while(frase.includes("enter" || "ober" || "imes" || "ai" || "ufat")){
-    for (let index = 0; index < frase.length; index++) {
-        frase = frase.replace(llaves[index],valores[index]);
-        console.log(frase);
-    }
-    
+
 }
+
+let estatus = true;
+let completo = false;
+
+do {
+let posicion = 0;
+do{
+
+    while(frase.includes(llaves[posicion])){
+        for (let index = 0; index < frase.match(llaves[posicion]); index++) {
+            frase = frase.replace(llaves[posicion],valores[posicion]);
+            console.log(frase);
+        }
+    
+    }
+}while(contador<=llaves.length)
+
+    
+} while (completo);
+
+          
+               
 // console.log(frase.includes(llaves.forEach(element => {
 //     return element}
 //     )));
