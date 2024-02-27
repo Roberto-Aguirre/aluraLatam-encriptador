@@ -1,19 +1,16 @@
-// let frase = "hoberlai qufatenter paisai genterntenter denter yufattufatb"
-let frase = "enter imes ai ai ai ai ober ufat"
-
 /**
  * Reglas
  * Las "llaves" de encriptación que utilizaremos son las siguientes:
-
     // La letra "e" es convertida para "enter"
     // La letra "i" es convertida para "imes"
     // La letra "a" es convertida para "ai"
     // La letra "o" es convertida para "ober"
     // La letra "u" es convertida para "ufat"
-
 */
 
-// frase.includes("hola") ? frase.replace("hola","h"): console.log("false");
+let fraseInicial = "hoberlai genterntenter denter yoberufattufatbenter menter gufatstai enterl tufatyufatb y menter gufatstai cobercimesnair"
+
+
 const desencriptar = {
     e: "enter",
     o: "ober",
@@ -22,44 +19,81 @@ const desencriptar = {
     u: "ufat"
 }
 
+const valores = Object.values(desencriptar);
+const llaves = Object.keys(desencriptar);
 
-// console.log(Object.values(desencriptar));
-// console.log(Object.keys(desencriptar));
-
-const llaves = Object.values(desencriptar);
-const valores = Object.keys(desencriptar);
-
-// console.log(frase);
-
-// llaves.forEach(index=> { 
-//     console.log(`${index}`)}
+let fraseResultado = fraseInicial;
+function mostrarTextoResultado(valores) {
+    for (let i = 0; i < valores.length; i++) {
     
-//     );
-
-
-function filtro(frase) {
-    
-
+        fraseResultado = remplazarTexto(fraseResultado,i);
+    }
+    return fraseResultado    
 }
 
-let estatus = true;
-let completo = false;
+function remplazarTexto(fraseInicial,index){
+    do{
+        fraseInicial = fraseInicial.replace(valores[index],llaves[index]);
+    }while(fraseInicial.includes(valores[index]))
+    console.log(fraseResultado);
+    return fraseInicial
+}
 
-do {
-let posicion = 0;
-do{
+console.log(mostrarTextoResultado(valores));
 
-    while(frase.includes(llaves[posicion])){
-        for (let index = 0; index < frase.match(llaves[posicion]); index++) {
-            frase = frase.replace(llaves[posicion],valores[posicion]);
-            console.log(frase);
-        }
+
+
+
+
+
+// let a = fraseInicial.match(/enter/g);
+// console.log(a);
+// a == null? a= 0: a=a.length;
+// console.log(a);
+
+// let contadorCoincidencias = 2;
+// for (let i = 1; i <= a; i++) {
+//     fraseInicial = fraseInicial.replace(valores[0],llaves[0]);
+//     console.log(fraseInicial);
+// }
+
+//bucle que haga la funcion.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// while(0<=frase.match(llaves[1])){
+//     for (let index = 0; index < frase.match; index++) {
+//         frase = frase.replace(llaves[index],valores[index]);
+//         console.log(frase);
     
-    }
-}while(contador<=llaves.length)
+// }
+// }
+
+    // while(frase.includes(llaves[posicion])){
+    //     for (let index = 0; index < frase.match(llaves[posicion]); index++) {
+    //         frase = frase.replace(llaves[posicion],valores[posicion]);
+    //         console.log(frase);
+    //     }
+    
+    // }
 
     
-} while (completo);
+
 
           
                
