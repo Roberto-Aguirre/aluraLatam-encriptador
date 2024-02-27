@@ -34,6 +34,7 @@ const llaves = Object.keys(desencriptar);
 //Funcion condiciones iniciales
 function condicionesVerdaderas() {
         textoResultado.appendChild(childResultado);
+        textoResultado.hidden=false;
         inicialResultado.hidden = true;
         childResultado.hidden = false;
 }
@@ -41,7 +42,8 @@ function condicionesVerdaderas() {
 function condicionesIniciales() {
     inicialResultado.hidden = false;
     childResultado.hidden = true;
-    childResultado.style.width("100px")
+    textoResultado.hidden = true;
+    
 }
 
 //Funcion principal del DOM

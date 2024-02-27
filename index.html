@@ -21,11 +21,12 @@
             <div id="texto-usuario">
                 <textarea name="texto" id="texto" cols="90" rows="20" autofocus placeholder="Ingrese el texto aquí" ></textarea>
             </div>
-            <div class="zona-botones">
-            <div id="botones" >
+            <div class="zona-botones">            
                 <p><img src="recursos/bi_exclamation-circle-fill.png" alt="">Solo letras minusculas y sin acentos</p>
-                <button class="formato-boton" id="encriptar" onclick="clickBtnEncriptar()">Encriptar</button>
-                <button class="formato-boton" id="desencriptar" onclick="clickBtnDesencriptar()">Desencriptar</button>
+                <div id="botones" >
+                    <button class="formato-boton" id="encriptar" onclick="clickBtnEncriptar()">Encriptar</button>
+                    <button class="formato-boton" id="desencriptar" onclick="clickBtnDesencriptar()">Desencriptar</button>
+                </div>
             </div>
         </section>
 
@@ -37,12 +38,9 @@
             <h3>Ningun mensaje fue encontrado</h3>
             <p>Ingresa el texto que desees encriptar o desencriptar</p>
             </div>
-            <div id="texto-resultado">
+            <div id="texto-resultado" hidden="">
             </div>
         </section>
-        
-
-
     
     <!--Pie de pagina para mi información-->
     <script src="app.js"></script>
