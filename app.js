@@ -1,17 +1,4 @@
-/**
- * Reglas
- * Las "llaves" de encriptación que utilizaremos son las siguientes:
-
-    // La letra "e" es convertida para "enter"
-    // La letra "i" es convertida para "imes"
-    // La letra "a" es convertida para "ai"
-    // La letra "o" es convertida para "ober"
-    // La letra "u" es convertida para "ufat"
-
-*/
-
 //Elementos del DOM
-
 //Guardo la condicion inicial donde no se tiene nada
 const inicialResultado = document.getElementById("area-resultado");
 const bloqueResultado = document.getElementById("resultado");
@@ -31,25 +18,45 @@ childResultado.setAttribute("readonly","")
 let frase = "";
 let fraseArray = [];
 let textArea = document.getElementById("texto");
+//Objeto con los valores que se van a desencriptar
+const desencriptar = {
+    e: "enter",
+    o: "ober",
+    i: "imes",
+    a: "ai",
+    u: "ufat"
+}
+//Pasarlos a un array para desarmarlos.
+const valores = Object.values(desencriptar);
+const llaves = Object.keys(desencriptar);
 
-function clickBtnEncriptar() {
-    childResultado.value = juntarTexto(encriptarTexto(getTextareaValue()));
-    
-    if(childResultado.value!= ""){
+
+//Funcion condiciones iniciales
+function condicionesVerdaderas() {
         textoResultado.appendChild(childResultado);
-        // console.log(textoResultado);
         inicialResultado.hidden = true;
         childResultado.hidden = false;
-    }else{
-        inicialResultado.hidden = false;
-        childResultado.hidden = true;
-    }
+}
+
+function condicionesIniciales() {
+    inicialResultado.hidden = false;
+    childResultado.hidden = true;
+    childResultado.style.width("100px")
+}
+
+//Funcion principal del DOM
+function clickBtnEncriptar() {
+    childResultado.value = juntarTexto(encriptarTexto(getTextareaValue()));
+    childResultado.value!= ""?condicionesVerdaderas():condicionesIniciales();
     
 }
 
+//Obtiene el texto del DOM, del textarea principal donde se escribe.
 function getTextareaValue() {
     return textArea.value;
 }
+
+//En base a la frase que llega se encripta de la siguiente manera.
 function encriptarTexto(frase){
     fraseArray = []
     for (let index = 0; index < frase.length; index++) {
@@ -74,16 +81,40 @@ function encriptarTexto(frase){
             default:
                 break;
         }
+        //Se construye en un array nuevo que va lugar por lugar.
         fraseArray.push(letra);
     }
-    // console.log(fraseArray);
     return fraseArray;
 }   
 
+//Aqui se junta el texto y se envia con el result.
 function juntarTexto(fraseArray){
     let resultado = ""
     fraseArray.forEach(element => {resultado += element;});
-    // console.log(resultado);
     return resultado
+}
+
+/* FUNCION DE DESCENCRIPTAR */
+//Obtiene el texto del textarea y lo envia a la funcion.
+function clickBtnDesencriptar() {
+    let fraseResultado = textArea.value;
+    childResultado.value = TextoResultado(valores,fraseResultado);
+    //Si no tiene texto no se mostrara nada
+    childResultado.value!= ""? condicionesVerdaderas(): condicionesIniciales();
+}
+
+function TextoResultado(valores,fraseResultado) {
+    for (let i = 0; i < valores.length; i++) {
+    
+        fraseResultado = remplazarTexto(fraseResultado,i);
+    }
+    return fraseResultado    
+}
+
+function remplazarTexto(fraseInicial,index){
+    do{
+        fraseInicial = fraseInicial.replace(valores[index],llaves[index]);
+    }while(fraseInicial.includes(valores[index]))
+    return fraseInicial
 }
 
