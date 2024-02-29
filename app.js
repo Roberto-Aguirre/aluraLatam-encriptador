@@ -10,9 +10,20 @@ const desencriptarBtn = document.getElementById("desencriptar");
 
 //Elementos creados
 
-const childResultado  = document.createElement("textarea")
+const childResultado  = document.createElement("textarea");
+const botonCopiar = document.createElement("button");
+//Atributos del boton
+botonCopiar.innerText="Copiar";
+botonCopiar.setAttribute("class","formato-boton");
+botonCopiar.setAttribute("id","copiar");
+botonCopiar.setAttribute("onclick","copiarTexto()");
+console.log(botonCopiar);
+//Atributos del textarea
 childResultado.setAttribute("readonly","")
 
+
+const imagenes = document.querySelectorAll("img");
+const imagen = imagenes[2];
 
 //Variables globales
 let frase = "";
@@ -34,6 +45,7 @@ const llaves = Object.keys(desencriptar);
 //Funcion condiciones iniciales
 function condicionesVerdaderas() {
         textoResultado.appendChild(childResultado);
+        textoResultado.append(botonCopiar);
         textoResultado.hidden=false;
         inicialResultado.hidden = true;
         childResultado.hidden = false;
@@ -43,14 +55,20 @@ function condicionesIniciales() {
     inicialResultado.hidden = false;
     childResultado.hidden = true;
     textoResultado.hidden = true;
-    
+    resizeImagen()
 }
+condicionesIniciales()
 
-//Funcion principal del DOM
+//Funciones principales del DOM
 function clickBtnEncriptar() {
     childResultado.value = juntarTexto(encriptarTexto(getTextareaValue()));
     childResultado.value!= ""?condicionesVerdaderas():condicionesIniciales();
     
+}
+
+function resizeImagen() {
+    var w = window.innerWidth;
+    w<=1000?imagen.setAttribute("hidden",""):imagen.toggleAttribute("hidden","");
 }
 
 //Obtiene el texto del DOM, del textarea principal donde se escribe.
@@ -97,6 +115,7 @@ function juntarTexto(fraseArray){
 }
 
 /* FUNCION DE DESCENCRIPTAR */
+
 //Obtiene el texto del textarea y lo envia a la funcion.
 function clickBtnDesencriptar() {
     let fraseResultado = textArea.value;
@@ -119,4 +138,12 @@ function remplazarTexto(fraseInicial,index){
     }while(fraseInicial.includes(valores[index]))
     return fraseInicial
 }
+
+function copiarTexto() {
+    console.log(childResultado.value);
+    
+    navigator.clipboard.writeText(childResultado.value).then(()=>{alert("Texto copiado satisfactoriamente");})
+
+}
+
 
