@@ -45,7 +45,7 @@ max-height: 100%;
 }
 
 #texto{
-    border: none;
+    border:none;
     color: rgba(10, 56, 113,1);
     outline: none;
     font-family: "Inter", sans-serif;
@@ -62,7 +62,7 @@ max-height: 100%;
 /*! Botones */
 
 .zona-botones{
-margin-left: 20%;
+    width: fit-content;
     justify-content: center;
 }
 
@@ -73,21 +73,19 @@ button:active{
 .formato-boton{
     text-align: center;
     padding: 15px 100px;
-    border-radius: 25px;
+    border-radius: 28px;
     margin: 0 20px 0 20px;
-    font-size: 20px;
+    font-size: 1.5vw;
     font-family: "Inter", sans-serif;
+}
+#botones{
+    width: fit-content;
 }
 
 #botones >p {
     font-size: 15px;
     margin: 0 0 10px 0;
 
-}
-#botones >p>img{
-    width:3%;
-    margin-right: 5px;
-    text-align: center;
 }
 
 #encriptar{
@@ -155,33 +153,53 @@ button:active{
 
 @media (400px<= width <=700px){
     #main-area{
-        width: fit-content;
+        width: 100%;
     }
+    
     body,html{
-        max-width:100px;
+        max-width:100%;
         display: block;
     }
     .zona-botones{
-        margin: 10px ;
+        
         width: 100%;
         display: inline-block;
     }
     #texto-usuario{
         /*Investigar calcular en base a la pantalla*/
-        width:min-content;
+        width:fit-content;
     }
     #texto{
         margin: 0 30px ;
         width:150%;
     }
     #botones{
-        width: 20%;
+        display: flex;
+        justify-content: center;
+        width: 100vw;
         display: flex;
     }
     #botones>button{
+        width: 30vw;
+        font-size: 3vw;
+    }
+
+    .formato-boton{
+        font-size: 10vw;
+        padding: 3vw 20vw;
         display: flex;
         justify-content: center;
-        width: 20%;
+        width: 10vw;
     }
     
+    #resultado{
+        margin: 1% auto;
+        min-width:100%;
+    }
+    #area-resultado{
+        height: 100%;
+    }
+    #area-resultado>img{ 
+        visibility: hidden;
+    }
 }
