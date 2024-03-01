@@ -12,8 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body onresize="resizeImagen()">
-
-        <section id="main-area">
+        <main>
+        <section class="main-area">
             <div id="header-logo">
                     <img src="recursos/Logo-1.png" alt="">
             </div>
@@ -30,19 +30,23 @@
             </div>
         </section>
 
-        </section>
+        <section class="resultado-area">
         
         <div id="resultado">
             <div id="area-resultado">
-            <img src="recursos/Muñeco.png" alt="">
-            <h3>Ningun mensaje fue encontrado</h3>
-            <p>Ingresa el texto que desees encriptar o desencriptar</p>
-            
+                <div class="contenido">
+                    <img src="recursos/Muñeco.png" alt="">
+                    <h3>Ningun mensaje fue encontrado</h3>
+                    <p>Ingresa el texto que desees encriptar o desencriptar</p>
+          
+                </div>
+          
         </div>
+        <!-- Div oculot que se muestra cuando se encripta o desencripta-->
             <div id="texto-resultado" hidden="">
             </div>
         </section>
-    
+    </main>
     <!--Pie de pagina para mi información-->
     <script src="app.js"></script>
 </body>

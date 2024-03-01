@@ -1,20 +1,25 @@
+
 /*! Generales */
-/*Ayuda para hacer el diseño*/
 div{
-    /* border: 2px solid rgb(0, 0, 0); */
-}
-html{
-min-width: 100%;
-    width: 100%;
-    height: fit-content;
+    /* border: 2px solid black; */
 }
 
+html{
+    width: 100%;
+    height: 100%;
+    margin: 0 0;
+}
 body{
+    margin: 0 0;
+    height: 100%;
+    width: 100%;
+}
+main{
     width: 100%;
     margin: 0 0;
     padding: 0 0;
     display: flex;
-    min-height: 50vw;
+    height:100%;
     background-color:  rgb(243, 245, 252);
 }
 
@@ -24,12 +29,6 @@ body{
     background-color:white;
     border: 2px solid rgb(44, 107, 184);
     margin: 1vw auto;
-}
-
-#main-area{
-width: 70%;
-min-height: 100%;
-max-height: 100%;
 }
 
 /*! Logo */
@@ -42,10 +41,14 @@ max-height: 100%;
     height: 100%;
 }
 /*! Texto a ingresar */
+.main-area{
+    width: 75%;
+}
+
 #texto-usuario{    
     /* border: 2px red solid; */
 
-    min-height: 70%;
+    min-height: 60%;
     min-width: 70%;
     display: flex;
     justify-content: center;
@@ -119,16 +122,26 @@ button:active{
 /*! Resultado */
 
 #resultado{
+    margin: 5% auto;
     border-radius: 30px;
     background-color: white;
-    min-width: 25%;
-    max-width: 25%;
-    margin: 2% 5% 2% 1vw;
-}
+    width: 90%;
+    height: 85%;  
 
+}
+.resultado-area{
+    height: 100%;
+    width: 30%;
+}
+.contenido>*{
+    width: 100%;
+    height: 70%;
+}
 #area-resultado{
-    margin: 50% 10px 0 10px ;
-    height: 30vw;
+    padding-top: 20%;
+    margin: 0 auto;
+    width: 80%;
+    height: 90%;
     font-size: 15px;
     text-align: center;
     font-family: "Inter", sans-serif;   
@@ -139,44 +152,48 @@ button:active{
 }
 
 #texto-resultado{
-    margin: 20% 0 0 0 ;
-    height: 40vw;
+    margin: 15% 0 0 0 ;
+    height: 100%;
     font-size: 15px;
     text-align: center;
     font-family: "Inter", sans-serif;
     
 }
 #texto-resultado > textarea {
+    margin: 10% 0 0 0;
     resize: none;
     border: none;
     font-size: 200%;
     color: rgba(10, 56, 113,1);
     width: 70%;
-    height: 80%;
+    height: 70%;
     padding: 0px 20px;
     outline: 0 none;
 }
 
 @media (0px<= width <=1000px){
-    #main-area{
-        width: 100%;
 
+    #main-area{
+        height: 100vw;
+    }
+    html{
+        height: fit-content;
+    }
+    body{
+        height: 100%;
+    }
+    main{
+        display: inline-block;
     }
     
-    body,html{
-        max-width:100%;
-        display: block;
-    }
     .zona-botones{
-        width: 100%;
+        width: 95vw;
         display: inline-block;
     }
     #texto-usuario{
         /*Investigar calcular en base a la pantalla*/
-        width:fit-content;
-    }
-    #texto-resultado{
-
+        width:95vw;
+        margin: 0 auto;
     }
     #texto{
         margin: 0 30px ;
@@ -190,7 +207,10 @@ button:active{
     #botones>button{
         font-size: 3vw;
     }
-
+    .resultado-area{
+        width: 100%;
+        height: 30vw;
+    }
     .formato-boton{
         padding: 3vw 20vw;
         display: flex;
@@ -203,23 +223,24 @@ button:active{
     font-size: 3vw;
 }
     #resultado{
-        margin: 1% auto;
+        height: fit-content;
+        margin: 5% auto;
         min-width:90%;
-        min-height: max-co;
     }
     #area-resultado{
-        height: 100%;
+        width: fit-content;
         font-size: 4vw;
-       margin: 8vw 0 0 0;
        padding: 2vw;
     }
-
+    #resultado-area{
+        height: 150vw   ;
+    }
     #texto-resultado{
         height: fit-content;
         margin: 5vw 1vw;
     }
     #texto-resultado>textarea{
-        height: 100vw;    
+        height: 50vw;    
         margin: 4vw 0 0 0 ;
     }
     #texto-resultado>button{
@@ -242,6 +263,9 @@ button:active{
        padding: 5vw 5vw;
         width: 80vw;
 
+    }
+    #texto-resultado>textarea{
+        min-height: 150vw;
     }
     #area-resultado{
         
