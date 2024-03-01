@@ -1,8 +1,5 @@
 
 /*! Generales */
-div{
-    /* border: 2px solid black; */
-}
 
 html{
     width: 100%;
@@ -19,7 +16,7 @@ main{
     margin: 0 0;
     padding: 0 0;
     display: flex;
-    height:100%;
+    height:90%;
     background-color:  rgb(243, 245, 252);
 }
 
@@ -29,6 +26,30 @@ main{
     background-color:white;
     border: 2px solid rgb(44, 107, 184);
     margin: 1vw auto;
+}
+.info>ul{
+    margin: 0 0;
+    color: white;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 2vw;
+}
+
+footer{
+    height: fit-content;
+}
+.info{
+    background-color: black;
+    
+}
+
+.img-info{
+    background-color: rgb(255, 255, 255);
+    margin: 0 0;
+    width: 8vw;
+
 }
 
 /*! Logo */
@@ -122,7 +143,7 @@ button:active{
 /*! Resultado */
 
 #resultado{
-    margin: 5% auto;
+    margin: 15% auto;
     border-radius: 30px;
     background-color: white;
     width: 90%;
@@ -173,26 +194,25 @@ button:active{
 
 @media (0px<= width <=1000px){
 
-    #main-area{
-        height: 100vw;
-    }
-    html{
-        height: fit-content;
+    .main-area{
+        width: 100vw;
+        height: 70%;
     }
     body{
-        height: 100%;
+        height: fit-content;
     }
     main{
-        display: inline-block;
+        height: auto;
+        display: block;
     }
     
     .zona-botones{
-        width: 95vw;
+        width: 99vw;
         display: inline-block;
     }
     #texto-usuario{
         /*Investigar calcular en base a la pantalla*/
-        width:95vw;
+        width:99vw;
         margin: 0 auto;
     }
     #texto{
@@ -205,35 +225,34 @@ button:active{
         display: flex;
     }
     #botones>button{
-        font-size: 3vw;
+        font-size: 100%;
     }
     .resultado-area{
         width: 100%;
-        height: 30vw;
+        height: fit-content;
     }
     .formato-boton{
         padding: 3vw 20vw;
         display: flex;
         justify-content: center;
         width: 10vw;
-        font-size: 100%;
     }
     .zona-botones >p {
     margin-left: 10%;
     font-size: 3vw;
 }
     #resultado{
-        height: fit-content;
+        height:max-content;
         margin: 5% auto;
-        min-width:90%;
     }
     #area-resultado{
         width: fit-content;
         font-size: 4vw;
        padding: 2vw;
     }
-    #resultado-area{
-        height: 150vw   ;
+    .resultado-area{
+        margin: 1vw;
+
     }
     #texto-resultado{
         height: fit-content;
@@ -260,7 +279,7 @@ button:active{
     }
     .formato-boton{
         margin: 1vw auto;
-       padding: 5vw 5vw;
+        padding: 5vw 5vw;
         width: 80vw;
 
     }
@@ -268,9 +287,8 @@ button:active{
         min-height: 150vw;
     }
     #area-resultado{
-        
         font-size: 5vw;
-       margin: 8vw 0 10vw 0;
-       padding: 2vw;
+        margin: 8vw 0 10vw 0;
+        padding: 2vw;
     }
 }
